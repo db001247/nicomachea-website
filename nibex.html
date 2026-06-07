@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NIBEX — the Nicomachea Business Index. A first principles business health assessment framework producing a scored, comparable index across eleven dimensions.">
+<title>NIBEX — Nicomachea Business Index</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero {
+  padding: 160px 60px 100px;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(154,124,46,0.07) 0%, transparent 60%);
+}
+
+.page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.page-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.page-hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.page-hero p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+
+.hero-score-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(154,124,46,0.2);
+  padding: 40px;
+  position: relative;
+}
+
+.hero-score-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.score-big {
+  font-family: var(--serif);
+  font-size: 96px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.score-big span {
+  font-size: 24px;
+  color: var(--gold);
+}
+
+.score-card-label {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(154,124,46,0.6);
+  margin-bottom: 28px;
+}
+
+.score-card-bars { }
+
+.score-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.score-bar-name {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  width: 76px;
+  flex-shrink: 0;
+  letter-spacing: 0.06em;
+}
+
+.score-bar-track {
+  flex: 1;
+  height: 2px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 99px;
+}
+
+.score-bar-num {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--gold);
+  width: 20px;
+  text-align: right;
+}
+
+/* WHAT IT IS */
+.what-it-is {
+  padding: 100px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.what-it-is h2 {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.what-it-is p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.protocol-box {
+  background: var(--ink);
+  padding: 32px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.protocol-box::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-light));
+}
+
+.protocol-title {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.protocol-body {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+}
+
+.protocol-body strong {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+/* SCALE */
+.scale-section {
+  background: var(--cream);
+  border-top: 0.5px solid var(--rule);
+  border-bottom: 0.5px solid var(--rule);
+  padding: 80px 60px;
+}
+
+.scale-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scale-inner h2 {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 48px;
+}
+
+.scale-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.scale-item {
+  padding: 20px 14px;
+  background: var(--surface);
+  border: 0.5px solid var(--rule);
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.scale-item:hover { transform: translateY(-4px); }
+
+.scale-item.dereliction { background: #fcebeb; border-color: #e24b4a; }
+.scale-item.absent { background: #f1efe8; }
+.scale-item.level-3 { background: #e6f1fb; }
+.scale-item.level-4 { background: #eaf3de; }
+.scale-item.level-5 { background: #e1f5ee; }
+
+.scale-num {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.scale-item.dereliction .scale-num { color: #a32d2d; }
+.scale-item.absent .scale-num { color: #5f5e5a; }
+.scale-item.level-3 .scale-num { color: #185fa5; }
+.scale-item.level-4 .scale-num { color: #3b6d11; }
+.scale-item.level-5 .scale-num { color: #085041; }
+
+.scale-name {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.scale-item.dereliction .scale-name { color: #a32d2d; }
+.scale-item.absent .scale-name { color: #5f5e5a; }
+.scale-item:not(.dereliction):not(.absent) .scale-name { color: var(--gold); }
+
+.scale-desc {
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* DIMENSIONS */
+.dimensions-section {
+  padding: 100px 60px;
+  background: var(--ink);
+}
+
+.dimensions-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dimensions-inner h2 {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.dimensions-inner > p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 56px;
+  max-width: 520px;
+}
+
+.dim-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+}
+
+.dim-item {
+  background: var(--ink);
+  padding: 32px 28px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dim-item:hover {
+  border-left-color: var(--gold);
+  background: rgba(154,124,46,0.04);
+}
+
+.dim-item-num {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(154,124,46,0.35);
+  margin-bottom: 12px;
+}
+
+.dim-item-name {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.dim-item-subs {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+/* TIERS */
+.tiers-section {
+  padding: 100px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tiers-section h2 {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 48px;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--rule);
+}
+
+.tier-item {
+  background: var(--surface);
+  padding: 36px 28px;
+  position: relative;
+}
+
+.tier-item.featured {
+  background: var(--ink);
+}
+
+.tier-item.featured::before {
+  content: 'Most popular';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  background: var(--gold);
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 5px;
+}
+
+.tier-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.tier-item:not(.featured) .tier-name { color: var(--ink); }
+.tier-item.featured .tier-name { color: #fff; }
+
+.tier-price {
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.tier-item:not(.featured) .tier-price { color: var(--gold); }
+.tier-item.featured .tier-price { color: var(--gold-light); }
+
+.tier-price-mvp {
+  font-size: 11px;
+  font-family: var(--sans);
+  color: var(--faint);
+  margin-bottom: 20px;
+}
+
+.tier-desc {
+  font-size: 12px;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.tier-item:not(.featured) .tier-desc { color: var(--muted); }
+.tier-item.featured .tier-desc { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.1); }
+
+.tier-features {
+  list-style: none;
+}
+
+.tier-features li {
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 5px 0 5px 14px;
+  position: relative;
+}
+
+.tier-item:not(.featured) .tier-features li { color: var(--muted); }
+.tier-item.featured .tier-features li { color: rgba(255,255,255,0.5); }
+
+.tier-features li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* CTA */
+.nibex-cta {
+  background: var(--gold-pale);
+  border-top: 0.5px solid var(--rule);
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.nibex-cta h2 {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.nibex-cta p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.75;
+}
+
+.btn-primary {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+@media (max-width: 900px) {
+  .page-hero { padding: 120px 24px 60px; }
+  .page-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .what-it-is { padding: 60px 24px; }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .scale-section { padding: 60px 24px; }
+  .scale-grid { grid-template-columns: repeat(4, 1fr); }
+  .dimensions-section { padding: 60px 24px; }
+  .dim-grid { grid-template-columns: 1fr 1fr; }
+  .tiers-section { padding: 60px 24px; }
+  .tiers-grid { grid-template-columns: 1fr 1fr; }
+  .nibex-cta { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    Nicomachea
+    <span class="nav-brand-tag">Business Intelligence</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="nibex.html" class="active">NIBEX</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="section-label" style="margin-bottom:24px">
+        <span style="width:24px;height:1px;background:var(--gold);display:inline-block;vertical-align:middle;margin-right:14px;"></span>
+        Nicomachea Business Index
+      </div>
+      <h1>A score that tells the truth about a <em>business.</em></h1>
+      <p>NIBEX is a first principles business health assessment framework — the first standardised, licensable methodology of its kind at the SME and institutional level.</p>
+      <p>It produces a single comparable score across eleven dimensions, weighted by sector, with a dereliction protocol that surfaces active legal and compliance failures before they become crises.</p>
+    </div>
+    <div class="hero-score-card">
+      <div class="score-big">69<span>/100</span></div>
+      <div class="score-card-label">NIBEX Score — After engagement</div>
+      <div class="score-bar-item">
+        <span class="score-bar-name">Economic</span>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:62%"></div></div>
+        <span class="score-bar-num">62</span>
+      </div>
+      <div class="score-bar-item">
+        <span class="score-bar-name">Operations</span>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:68%"></div></div>
+        <span class="score-bar-num">68</span>
+      </div>
+      <div class="score-bar-item">
+        <span class="score-bar-name">Digital</span>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:74%"></div></div>
+        <span class="score-bar-num">74</span>
+      </div>
+      <div class="score-bar-item">
+        <span class="score-bar-name">Customers</span>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div>
+        <span class="score-bar-num">70</span>
+      </div>
+      <div class="score-bar-item">
+        <span class="score-bar-name">Legal</span>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:64%"></div></div>
+        <span class="score-bar-num">64</span>
+      </div>
+      <div class="score-bar-item">
+        <span class="score-bar-name">Strategy</span>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:76%"></div></div>
+        <span class="score-bar-num">76</span>
+      </div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);font-size:10px;color:rgba(255,255,255,0.2);font-style:italic;">
+        Illustrative after score · previously 53 before engagement
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS -->
+<section class="what-it-is">
+  <div class="two-col">
+    <div class="fade-in">
+      <div class="section-label">What NIBEX is</div>
+      <h2>Built from first principles. Scored without assumption.</h2>
+      <div class="rule-gold"></div>
+      <p>Most business assessments start with assumptions — that the financial picture tells the whole story, that digital presence is the primary risk, that operational problems will surface themselves. NIBEX starts with none of these assumptions.</p>
+      <p>It works through every dimension of a business systematically — economic position, market context, revenue model, cost structure, stakeholder dependencies, operations, people, customer relationships, digital infrastructure, strategic clarity, and legal compliance — producing a scored sub-element for each, aggregated into dimension scores, weighted by sector, and combined into a single NIBEX score.</p>
+      <p>The score is comparable across businesses, across sectors, and across time. A score of 58 means something specific. A score that moves from 42 to 67 over six months means something demonstrable.</p>
+    </div>
+    <div class="fade-in">
+      <div class="protocol-box" style="margin-bottom:16px">
+        <div class="protocol-title">The dereliction protocol</div>
+        <div class="protocol-body">Any sub-element where a business is in active breach of a legal obligation scores <strong>-1</strong> — not zero, not pending, but a true negative integer. This triggers a dimension ceiling of 2, preventing other scores in the same dimension from masking the exposure. The ceiling lifts only when every dereliction in that dimension is resolved. A business cannot score its way past a compliance failure.</div>
+      </div>
+      <div class="protocol-box">
+        <div class="protocol-title">Modular assessment</div>
+        <div class="protocol-body">NIBEX assessments are modular. A Foundations engagement covers the core dimensions. Standard adds economic and strategic layers. Complete covers all eleven. A partial NIBEX score is always clearly notated — showing which dimensions have been assessed and which remain pending. <strong>Every assessment is the start of a complete picture, not a compromise.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCALE -->
+<section class="scale-section">
+  <div class="scale-inner">
+    <div class="section-label">The scoring scale</div>
+    <h2>Every sub-element. One consistent scale.</h2>
+    <div class="scale-grid">
+      <div class="scale-item dereliction fade-in">
+        <div class="scale-num">-1</div>
+        <div class="scale-name">Dereliction</div>
+        <div class="scale-desc">Active legal breach creating jeopardy. Triggers dimension ceiling.</div>
+      </div>
+      <div class="scale-item absent fade-in">
+        <div class="scale-num">0</div>
+        <div class="scale-name">Absent</div>
+        <div class="scale-desc">Should exist but does not. No active harm.</div>
+      </div>
+      <div class="scale-item fade-in">
+        <div class="scale-num">1</div>
+        <div class="scale-name">Minimal</div>
+        <div class="scale-desc">Exists in name only. Would not survive scrutiny.</div>
+      </div>
+      <div class="scale-item fade-in">
+        <div class="scale-num">2</div>
+        <div class="scale-name">Basic</div>
+        <div class="scale-desc">Foundation exists but is incomplete or fragile.</div>
+      </div>
+      <div class="scale-item level-3 fade-in">
+        <div class="scale-num">3</div>
+        <div class="scale-name">Functional</div>
+        <div class="scale-desc">Works for current needs. Identifiable gaps.</div>
+      </div>
+      <div class="scale-item level-4 fade-in">
+        <div class="scale-num">4</div>
+        <div class="scale-name">Developed</div>
+        <div class="scale-desc">Systematic. Holds under pressure or scrutiny.</div>
+      </div>
+      <div class="scale-item level-5 fade-in">
+        <div class="scale-num">5</div>
+        <div class="scale-name">Optimised</div>
+        <div class="scale-desc">Best practice for this type and scale of business.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIMENSIONS -->
+<section class="dimensions-section">
+  <div class="dimensions-inner">
+    <div class="section-label" style="color:var(--gold)">
+      <span style="width:24px;height:1px;background:var(--gold);display:inline-block;vertical-align:middle;margin-right:14px;"></span>
+      Eleven dimensions
+    </div>
+    <h2>Every dimension that drives business health.</h2>
+    <p>Sixty-eight sub-elements. Weighted by sector. Scored consistently across every engagement.</p>
+    <div class="dim-grid">
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">01</div>
+        <div class="dim-item-name">Economic Position and Trajectory</div>
+        <div class="dim-item-subs">7 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">02</div>
+        <div class="dim-item-name">Market Position and Competitive Context</div>
+        <div class="dim-item-subs">5 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">03</div>
+        <div class="dim-item-name">Revenue Model and Pricing</div>
+        <div class="dim-item-subs">4 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">04</div>
+        <div class="dim-item-name">Cost Structure and Financial Obligations</div>
+        <div class="dim-item-subs">5 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">05</div>
+        <div class="dim-item-name">Stakeholders, Partners, and Dependencies</div>
+        <div class="dim-item-subs">4 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">06</div>
+        <div class="dim-item-name">Operations and Processes</div>
+        <div class="dim-item-subs">9 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">07</div>
+        <div class="dim-item-name">People, Capability, and Culture</div>
+        <div class="dim-item-subs">6 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">08</div>
+        <div class="dim-item-name">Customer Relationships and Experience</div>
+        <div class="dim-item-subs">6 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">09</div>
+        <div class="dim-item-name">Digital and Technology Infrastructure</div>
+        <div class="dim-item-subs">7 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">10</div>
+        <div class="dim-item-name">Strategic Clarity and Leadership</div>
+        <div class="dim-item-subs">6 sub-elements</div>
+      </div>
+      <div class="dim-item fade-in">
+        <div class="dim-item-num">11</div>
+        <div class="dim-item-name">Legal, Compliance, and Insurance</div>
+        <div class="dim-item-subs">9 sub-elements</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="tiers-section">
+  <div class="section-label">Assessment tiers</div>
+  <h2>The right depth for the right engagement.</h2>
+  <div class="tiers-grid">
+    <div class="tier-item">
+      <div class="tier-name">Foundations</div>
+      <div class="tier-price">£250</div>
+      <div class="tier-price-mvp">£150 during MVP phase</div>
+      <div class="tier-desc">Core digital, operational, and customer dimensions. Findings report and task completion document. No score — narrative output.</div>
+      <ul class="tier-features">
+        <li>3 core dimensions</li>
+        <li>Findings report</li>
+        <li>Task completion document</li>
+        <li>Credited against project fee</li>
+      </ul>
+    </div>
+    <div class="tier-item featured">
+      <div class="tier-name">Standard</div>
+      <div class="tier-price">£1,000</div>
+      <div class="tier-price-mvp" style="color:rgba(255,255,255,0.3)">£600 during MVP phase</div>
+      <div class="tier-desc">Seven dimensions. Partial NIBEX score with sector weighting. Scored findings report with dimension breakdown.</div>
+      <ul class="tier-features">
+        <li>7 dimensions assessed</li>
+        <li>Partial NIBEX score</li>
+        <li>Sector weighting applied</li>
+        <li>Scored findings report</li>
+        <li>Task completion document</li>
+      </ul>
+    </div>
+    <div class="tier-item">
+      <div class="tier-name">Complete</div>
+      <div class="tier-price">£3,500</div>
+      <div class="tier-price-mvp">£2,100 during MVP phase</div>
+      <div class="tier-desc">All eleven dimensions. Full NIBEX score. Pre-assessment public register research included. Before and after comparison.</div>
+      <ul class="tier-features">
+        <li>All 11 dimensions</li>
+        <li>Full NIBEX score</li>
+        <li>Pre-assessment research</li>
+        <li>Sector weighting overlay</li>
+        <li>Before and after comparison</li>
+        <li>Dereliction protocol applied</li>
+      </ul>
+    </div>
+    <div class="tier-item">
+      <div class="tier-name">Monitor</div>
+      <div class="tier-price">£150–300<span style="font-size:14px">/mo</span></div>
+      <div class="tier-price-mvp">Annual reassessment retainer</div>
+      <div class="tier-desc">Ongoing reassessment of previously scored dimensions. Updated NIBEX score. Identifies drift, improvement, and new risk.</div>
+      <ul class="tier-features">
+        <li>Annual reassessment</li>
+        <li>Updated NIBEX score</li>
+        <li>Drift and improvement tracking</li>
+        <li>New risk identification</li>
+        <li>Monthly retainer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="nibex-cta">
+  <div class="section-label" style="justify-content:center">Get started</div>
+  <h2>Ready to know what your business actually scores?</h2>
+  <p>Speak to us about a NIBEX assessment — or about licensing the methodology for your practice or institution.</p>
+  <a href="contact.html" class="btn-primary">Get in touch</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">Nicomachea</div>
+    <div class="footer-tag">Business Intelligence Platform</div>
+    <div class="footer-desc">Developing the frameworks, methodology, and technology that allow businesses and institutions to understand what is actually happening inside an organisation.</div>
+  </div>
+  <div>
+    <div class="footer-col-label">Navigation</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nibex.html">NIBEX</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-label">Contact</div>
+    <div class="footer-contact-item"><strong style="color:rgba(255,255,255,0.7);font-size:13px">David Brown</strong></div>
+    <div class="footer-contact-item">Founder &amp; Principal</div>
+    <div class="footer-contact-item"><a href="mailto:david@nicomachea.co.uk">david@nicomachea.co.uk</a></div>
+    <div class="footer-contact-item"><a href="tel:07917206751">07917 206 751</a></div>
+    <div class="footer-contact-item" style="margin-top:12px"><strong style="color:rgba(255,255,255,0.7);font-size:13px">Sarah Brown</strong></div>
+    <div class="footer-contact-item">Operations &amp; Business Development Director</div>
+    <div class="footer-contact-item"><a href="mailto:sarah@nicomachea.co.uk">sarah@nicomachea.co.uk</a></div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <div class="footer-reg">Nicomachea Limited · Company No. 17155515 · Middlesbrough, Tees Valley</div>
+  <div class="footer-reg">© 2026 Nicomachea Limited. All rights reserved.</div>
+</div>
+
+</body>
+</html>
