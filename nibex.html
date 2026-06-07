@@ -201,82 +201,6 @@
   font-weight: 500;
 }
 
-/* SCALE */
-.scale-section {
-  background: var(--cream);
-  border-top: 0.5px solid var(--rule);
-  border-bottom: 0.5px solid var(--rule);
-  padding: 80px 60px;
-}
-
-.scale-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.scale-inner h2 {
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 300;
-  color: var(--ink);
-  margin-bottom: 48px;
-}
-
-.scale-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
-}
-
-.scale-item {
-  padding: 20px 14px;
-  background: var(--surface);
-  border: 0.5px solid var(--rule);
-  text-align: center;
-  position: relative;
-  transition: transform 0.2s;
-}
-
-.scale-item:hover { transform: translateY(-4px); }
-
-.scale-item.dereliction { background: #fcebeb; border-color: #e24b4a; }
-.scale-item.absent { background: #f1efe8; }
-.scale-item.level-3 { background: #e6f1fb; }
-.scale-item.level-4 { background: #eaf3de; }
-.scale-item.level-5 { background: #e1f5ee; }
-
-.scale-num {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
-  margin-bottom: 8px;
-}
-
-.scale-item.dereliction .scale-num { color: #a32d2d; }
-.scale-item.absent .scale-num { color: #5f5e5a; }
-.scale-item.level-3 .scale-num { color: #185fa5; }
-.scale-item.level-4 .scale-num { color: #3b6d11; }
-.scale-item.level-5 .scale-num { color: #085041; }
-
-.scale-name {
-  font-family: var(--sans);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.scale-item.dereliction .scale-name { color: #a32d2d; }
-.scale-item.absent .scale-name { color: #5f5e5a; }
-.scale-item:not(.dereliction):not(.absent) .scale-name { color: var(--gold); }
-
-.scale-desc {
-  font-size: 10px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
 /* DIMENSIONS */
 .dimensions-section {
   padding: 100px 60px;
@@ -502,8 +426,6 @@
   .page-hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .what-it-is { padding: 60px 24px; }
   .two-col { grid-template-columns: 1fr; gap: 40px; }
-  .scale-section { padding: 60px 24px; }
-  .scale-grid { grid-template-columns: repeat(4, 1fr); }
   .dimensions-section { padding: 60px 24px; }
   .dim-grid { grid-template-columns: 1fr 1fr; }
   .tiers-section { padding: 60px 24px; }
@@ -592,56 +514,11 @@
     <div class="fade-in">
       <div class="protocol-box" style="margin-bottom:16px">
         <div class="protocol-title">The dereliction protocol</div>
-        <div class="protocol-body">Any sub-element where a business is in active breach of a legal obligation scores <strong>-1</strong> — not zero, not pending, but a true negative integer. This triggers a dimension ceiling of 2, preventing other scores in the same dimension from masking the exposure. The ceiling lifts only when every dereliction in that dimension is resolved. A business cannot score its way past a compliance failure.</div>
+        <div class="protocol-body">Any sub-element where a business is in active breach of a legal obligation is flagged as a dereliction. This triggers a ceiling on the affected dimension — <strong>no amount of strong performance elsewhere in that dimension can mask an active compliance failure.</strong> The ceiling lifts only when every dereliction in that dimension is resolved. A business cannot score its way past a legal breach.</div>
       </div>
       <div class="protocol-box">
         <div class="protocol-title">Modular assessment</div>
         <div class="protocol-body">NIBEX assessments are modular. A Foundations engagement covers the core dimensions. Standard adds economic and strategic layers. Complete covers all eleven. A partial NIBEX score is always clearly notated — showing which dimensions have been assessed and which remain pending. <strong>Every assessment is the start of a complete picture, not a compromise.</strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCALE -->
-<section class="scale-section">
-  <div class="scale-inner">
-    <div class="section-label">The scoring scale</div>
-    <h2>Every sub-element. One consistent scale.</h2>
-    <div class="scale-grid">
-      <div class="scale-item dereliction fade-in">
-        <div class="scale-num">-1</div>
-        <div class="scale-name">Dereliction</div>
-        <div class="scale-desc">Active legal breach creating jeopardy. Triggers dimension ceiling.</div>
-      </div>
-      <div class="scale-item absent fade-in">
-        <div class="scale-num">0</div>
-        <div class="scale-name">Absent</div>
-        <div class="scale-desc">Should exist but does not. No active harm.</div>
-      </div>
-      <div class="scale-item fade-in">
-        <div class="scale-num">1</div>
-        <div class="scale-name">Minimal</div>
-        <div class="scale-desc">Exists in name only. Would not survive scrutiny.</div>
-      </div>
-      <div class="scale-item fade-in">
-        <div class="scale-num">2</div>
-        <div class="scale-name">Basic</div>
-        <div class="scale-desc">Foundation exists but is incomplete or fragile.</div>
-      </div>
-      <div class="scale-item level-3 fade-in">
-        <div class="scale-num">3</div>
-        <div class="scale-name">Functional</div>
-        <div class="scale-desc">Works for current needs. Identifiable gaps.</div>
-      </div>
-      <div class="scale-item level-4 fade-in">
-        <div class="scale-num">4</div>
-        <div class="scale-name">Developed</div>
-        <div class="scale-desc">Systematic. Holds under pressure or scrutiny.</div>
-      </div>
-      <div class="scale-item level-5 fade-in">
-        <div class="scale-num">5</div>
-        <div class="scale-name">Optimised</div>
-        <div class="scale-desc">Best practice for this type and scale of business.</div>
       </div>
     </div>
   </div>
