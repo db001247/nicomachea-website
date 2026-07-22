@@ -62,11 +62,11 @@ nav {
 
 .nav-brand-tag {
   font-family: var(--sans);
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .nav-links {
@@ -130,11 +130,11 @@ footer {
 
 .footer-tag {
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   margin-bottom: 16px;
 }
 
@@ -146,11 +146,11 @@ footer {
 
 .footer-col-label {
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   margin-bottom: 16px;
 }
 
@@ -199,7 +199,7 @@ footer {
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.55);
 }
 
 /* ── COMMON ELEMENTS ──────────────────────────────────────── */
