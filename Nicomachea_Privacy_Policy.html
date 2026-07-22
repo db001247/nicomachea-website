@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicomachea Limited — Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1e1e1e;
+    --gold: #9a7c2e;
+    --rule: #d4c9b4;
+    --muted: #7a7470;
+    --section-bg: #f7f4ef;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 56px 48px;
+  }
+
+  .header {
+    border-top: 1.5px solid var(--ink);
+    padding-top: 28px;
+    margin-bottom: 48px;
+  }
+
+  .brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .doc-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .gold-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 12px 0 16px;
+  }
+
+  .doc-meta {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .intro {
+    background: var(--section-bg);
+    border-left: 2px solid var(--gold);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .section {
+    margin-bottom: 36px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid var(--rule);
+    margin-bottom: 14px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0 0 14px 24px;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px;
+    font-size: 13px;
+  }
+
+  .data-table th {
+    background: var(--ink);
+    color: #ffffff;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 0.5px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .data-table tr:nth-child(even) td {
+    background: var(--section-bg);
+  }
+
+  .highlight-box {
+    border: 1px solid var(--rule);
+    padding: 16px 20px;
+    margin: 16px 0;
+    background: var(--section-bg);
+  }
+
+  .highlight-box p {
+    margin-bottom: 6px;
+  }
+
+  .flag-box {
+    border: 1px dashed #b23b3b;
+    padding: 12px 18px;
+    margin: 12px 0;
+    background: #fdf2f2;
+    font-size: 12px;
+    color: #8a3030;
+  }
+
+  .contact-block {
+    background: var(--section-bg);
+    border-left: 2px solid var(--gold);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .contact-block p {
+    margin-bottom: 4px;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 0.5px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-tag {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .footer-web {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 40px; }
+    .flag-box { border-color: #999; background: #f2f2f2; color: #444; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="brand">Nicomachea Limited — Legal</div>
+    <div class="doc-title">Privacy Policy</div>
+    <div class="gold-rule"></div>
+    <div class="doc-meta">Company Number: 17155515 &nbsp;·&nbsp; ICO Registration: ZC125798 &nbsp;·&nbsp; Version 2.0 &nbsp;·&nbsp; July 2026</div>
+  </div>
+
+  <div class="intro">
+    Nicomachea Limited is committed to protecting your privacy and handling your personal data responsibly. This policy explains what information we collect, why we collect it, how we use it, and your rights in relation to it. We will always be transparent about our practices and comply with all applicable data protection law including the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We are a data controller for the purposes of UK GDPR.
+  </div>
+
+  <!-- 1. WHO WE ARE -->
+  <div class="section">
+    <div class="section-label">1</div>
+    <div class="section-heading">Who We Are</div>
+    <p>Nicomachea Limited is a business intelligence platform and methodology developer, based in Middlesbrough. Our flagship product, NIBEX (the Nicomachea Business Index), is a structured business health assessment delivered to client businesses, either directly or via a licensed partner. This policy covers personal data we collect through our website, through direct client engagements, and through the NIBEX platform itself.</p>
+    <p>This policy applies to visitors to nicomachea.co.uk, prospective and current clients, and individuals whose data is processed through the NIBEX platform in connection with a client engagement.</p>
+  </div>
+
+  <!-- 2. INFORMATION WE COLLECT -->
+  <div class="section">
+    <div class="section-label">2</div>
+    <div class="section-heading">Information We Collect</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Examples</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Identity data</strong></td>
+          <td>Name, job title, business role</td>
+          <td>Directly from you</td>
+        </tr>
+        <tr>
+          <td><strong>Contact data</strong></td>
+          <td>Email address, telephone number, business address</td>
+          <td>Directly from you</td>
+        </tr>
+        <tr>
+          <td><strong>Business data</strong></td>
+          <td>Information about your business, its operations, systems and processes</td>
+          <td>Directly from you during a NIBEX assessment or other engagement</td>
+        </tr>
+        <tr>
+          <td><strong>Financial data</strong></td>
+          <td>Invoice records, payment records</td>
+          <td>Generated as part of our commercial relationship</td>
+        </tr>
+        <tr>
+          <td><strong>Communication data</strong></td>
+          <td>Emails, notes from meetings and calls</td>
+          <td>Generated during our working relationship</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We do not collect any special categories of personal data (such as health data, biometric data, racial or ethnic origin, religious beliefs, or political opinions) in the ordinary course of our business. If we ever need to handle such data in connection with a specific engagement, we will notify you separately and obtain your explicit consent.</p>
+    <p>We do not knowingly collect data relating to children.</p>
+
+    <p style="margin-top:20px"><strong>Contact form.</strong> When you use the contact form on our website, we collect your name, business name, email address, the nature of your enquiry (selected from a list — for example, NIBEX assessment interest, MVP participant interest, licensing enquiry, pre-acquisition due diligence, implementation or managed services, partnership or institutional enquiry, or other), and your message. This is submitted via a secure backend process and is not used for marketing without your separate consent.</p>
+
+    <p style="margin-top:16px"><strong>Cookies and analytics.</strong> Our website does not use analytics or tracking cookies. This has been independently verified.</p>
+  </div>
+
+  <!-- 3. NIBEX PLATFORM DATA -->
+  <div class="section">
+    <div class="section-label">3</div>
+    <div class="section-heading">Information Collected Through the NIBEX Platform</div>
+    <p>Where you or your organisation engage Nicomachea for a NIBEX business assessment, we collect and process the following in connection with that engagement:</p>
+    <ul>
+      <li>The name of the client business</li>
+      <li>Names of individuals within the client business who are included as part of the assessment (for example, in a staff registry used to structure the assessment)</li>
+      <li>Assessment content, notes, and responses gathered as part of the NIBEX assessment process</li>
+    </ul>
+    <p>This data is provided to us by our direct client (the business engaging Nicomachea). <strong>Our agreement with each client requires that business to ensure it has its own lawful basis for sharing information about its staff with us, and that it has informed its own staff accordingly.</strong> If you are a staff member of a Nicomachea client and have questions about how your data came to be included, please contact the business that engaged Nicomachea in the first instance, or contact us directly and we will assist.</p>
+    <p>Assessment data is used solely to prepare the business assessment and associated report(s) for the client that commissioned the work. It is not used for any other purpose, and is not shared with any other client or third party outside the processing described in Section 4 below.</p>
+  </div>
+
+  <!-- 4. AI PROCESSING -->
+  <div class="section">
+    <div class="section-label">4</div>
+    <div class="section-heading">Use of AI-Assisted Processing</div>
+    <p>As part of preparing NIBEX assessments, elements of assessment content may be sent to a third-party artificial intelligence processor, <strong>Anthropic</strong>, to assist with generating scoring suggestions as part of our assessment methodology. This is an automated processing step that supports, but does not replace, human review — all scoring and final assessment content is reviewed and finalised by Nicomachea.</p>
+    <div class="highlight-box">
+      <p><strong>Pseudonymisation.</strong> Before any assessment content is sent to this processor, real names of individuals (such as those in a staff registry) are replaced with reference codes. Nicomachea retains the ability to match these codes back to real names internally, which means this data remains "personal data" under UK GDPR even in pseudonymised form. Pseudonymisation reduces risk; it does not remove this processing from the scope of data protection law, and we do not represent it as doing so.</p>
+    </div>
+    <p>We have a data processing agreement in place with our AI processor, which includes contractual safeguards for international data transfers (including UK-specific transfer safeguards, since this processor is based in the United States). Our processor is contractually restricted from using submitted data to train its underlying models and operates under defined data retention and deletion terms.</p>
+  </div>
+
+  <!-- 5. HOW AND WHY WE USE DATA -->
+  <div class="section">
+    <div class="section-label">5</div>
+    <div class="section-heading">How and Why We Use Your Personal Data</div>
+    <p>We will only use your personal data where we have a lawful basis for doing so.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Purpose</th>
+          <th>Lawful Basis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Delivering a NIBEX assessment or other services under a contract</td>
+          <td>Performance of a contract</td>
+        </tr>
+        <tr>
+          <td>Sending invoices and managing payment</td>
+          <td>Performance of a contract / Legal obligation</td>
+        </tr>
+        <tr>
+          <td>Communicating with you about your engagement</td>
+          <td>Performance of a contract</td>
+        </tr>
+        <tr>
+          <td>Maintaining records for tax and accounting purposes</td>
+          <td>Legal obligation</td>
+        </tr>
+        <tr>
+          <td>Following up on initial enquiries or consultations</td>
+          <td>Legitimate interests</td>
+        </tr>
+        <tr>
+          <td>Improving our services and understanding client needs</td>
+          <td>Legitimate interests</td>
+        </tr>
+        <tr>
+          <td>Complying with legal or regulatory obligations</td>
+          <td>Legal obligation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Where we rely on <strong>legitimate interests</strong> as our lawful basis, we have considered whether our interests are overridden by your rights and concluded that they are not. You have the right to object to processing based on legitimate interests — see Section 8 below.</p>
+  </div>
+
+  <!-- 6. WHO WE SHARE DATA WITH -->
+  <div class="section">
+    <div class="section-label">6</div>
+    <div class="section-heading">Who We Share Your Data With</div>
+    <p>We do not sell, rent or trade your personal data to any third party.</p>
+    <p>We may share your personal data with the following categories of recipients where necessary:</p>
+    <ul>
+      <li><strong>Our AI processor (Anthropic)</strong> — assessment content, pseudonymised as described in Section 4, to assist with generating scoring suggestions.</li>
+      <li><strong>Professional advisers</strong> — accountants, solicitors or insurers who require access to fulfil their services to us, subject to appropriate confidentiality obligations.</li>
+      <li><strong>Technology providers</strong> — such as our email and database providers, where those tools process data on our behalf under appropriate contractual terms.</li>
+      <li><strong>HMRC and other regulatory bodies</strong> — where we are required to disclose information by law.</li>
+    </ul>
+    <p>Where personal data is transferred outside the United Kingdom (for example, to our AI processor in the United States), this is done only where appropriate safeguards are in place in accordance with the UK GDPR, as described in Section 4.</p>
+  </div>
+
+  <!-- 7. RETENTION -->
+  <div class="section">
+    <div class="section-label">7</div>
+    <div class="section-heading">How Long We Keep Your Data</div>
+    <p>We keep your personal data only for as long as necessary for the purposes for which it was collected, or as required by law.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Type of Data</th>
+          <th>Retention Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NIBEX assessment data and staff registry entries</td>
+          <td>Duration of the client relationship, plus 6 years following its conclusion, to align with our other statutory record-keeping obligations</td>
+        </tr>
+        <tr>
+          <td>Financial and invoicing records</td>
+          <td>6 years from the end of the relevant tax year (HMRC requirement)</td>
+        </tr>
+        <tr>
+          <td>Email correspondence</td>
+          <td>Duration of the engagement plus 3 years</td>
+        </tr>
+        <tr>
+          <td>Prospective client enquiry records (no engagement follows)</td>
+          <td>12 months from initial contact</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px">When data is no longer required, we will delete or anonymise it securely. Where a client business exercises its right of erasure over its staff registry entries, Nicomachea will delete the identifying record; the linked assessment data is thereby rendered anonymous rather than deleted outright, and may be retained on that basis.</p>
+  </div>
+
+  <!-- 8. YOUR RIGHTS -->
+  <div class="section">
+    <div class="section-label">8</div>
+    <div class="section-heading">Your Rights</div>
+    <p>Under UK data protection law, you have the following rights in relation to your personal data:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Right</th>
+          <th>What It Means</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Right of access</strong></td>
+          <td>You can request a copy of the personal data we hold about you (a Subject Access Request).</td>
+        </tr>
+        <tr>
+          <td><strong>Right to rectification</strong></td>
+          <td>You can ask us to correct inaccurate or incomplete personal data.</td>
+        </tr>
+        <tr>
+          <td><strong>Right to erasure</strong></td>
+          <td>You can ask us to delete your personal data in certain circumstances.</td>
+        </tr>
+        <tr>
+          <td><strong>Right to restrict processing</strong></td>
+          <td>You can ask us to limit how we use your personal data in certain circumstances.</td>
+        </tr>
+        <tr>
+          <td><strong>Right to data portability</strong></td>
+          <td>You can ask us to provide your personal data in a portable, machine-readable format in certain circumstances.</td>
+        </tr>
+        <tr>
+          <td><strong>Right to object</strong></td>
+          <td>You can object to processing based on legitimate interests or for direct marketing purposes.</td>
+        </tr>
+        <tr>
+          <td><strong>Right to withdraw consent</strong></td>
+          <td>Where we process data based on consent, you can withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>To exercise any of your rights, please contact us at <strong>david@nicomachea.co.uk</strong>. We will respond within one calendar month of receiving your request. We will not charge a fee for handling your request unless the request is manifestly unfounded or excessive.</p>
+    <p>We may need to verify your identity before processing your request.</p>
+  </div>
+
+  <!-- 9. HOW WE PROTECT DATA -->
+  <div class="section">
+    <div class="section-label">9</div>
+    <div class="section-heading">How We Protect Your Data</div>
+    <p>We take appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, destruction or alteration. These measures include:</p>
+    <ul>
+      <li>Password protection and multi-factor authentication on systems used to process personal data</li>
+      <li>Pseudonymisation of identifying information before any AI-assisted processing, as described in Section 4</li>
+      <li>Access controls ensuring only authorised individuals can access personal data</li>
+      <li>Regular software updates and security patching</li>
+      <li>Secure deletion of data when no longer required</li>
+    </ul>
+    <p>In the event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify the ICO within 72 hours and, where required, notify you without undue delay.</p>
+  </div>
+
+  <!-- 10. COMPLAINTS -->
+  <div class="section">
+    <div class="section-label">10</div>
+    <div class="section-heading">How to Make a Complaint</div>
+    <p>If you have a concern about how we have handled your personal data, please contact us in the first instance at <strong>david@nicomachea.co.uk</strong> and we will do our best to resolve the matter.</p>
+    <p>If you remain dissatisfied, you have the right to lodge a complaint with the Information Commissioner's Office (ICO), which is the supervisory authority for data protection in the United Kingdom:</p>
+    <div class="highlight-box">
+      <p><strong>Information Commissioner's Office</strong></p>
+      <p>Website: ico.org.uk</p>
+      <p>Helpline: 0303 123 1113</p>
+      <p>Address: Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF</p>
+    </div>
+  </div>
+
+  <!-- 11. CHANGES -->
+  <div class="section">
+    <div class="section-label">11</div>
+    <div class="section-heading">Changes to This Policy</div>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, the services we offer, or legal requirements. We will notify you of any material changes where we have your contact details and are able to do so. The current version of this policy is always available on request.</p>
+    <p>This policy was last updated in <strong>July 2026</strong>.</p>
+  </div>
+
+  <div class="contact-block">
+    <p><strong>Nicomachea Limited</strong></p>
+    <p>Office 32, The Cube Storage, Johnson Matthey Building, Haverton Hill Road, Billingham, TS23 1QG</p>
+    <p>david@nicomachea.co.uk</p>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Nicomachea</div>
+    <div class="footer-tag">Business Intelligence Platform &amp; Methodology Developer</div>
+    <div class="footer-web">nicomachea.co.uk</div>
+  </div>
+
+</div>
+</body>
+</html>
