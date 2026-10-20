@@ -324,6 +324,10 @@
   color: rgba(255,255,255,0.4);
 }
 
+@media (min-width: 901px) {
+  .services-grid .service-item:last-child { grid-column: span 2; }
+}
+
 /* ── NIBEX CALLOUT ────────────────────────────────────────── */
 .nibex-callout {
   padding: 120px 60px;
@@ -453,7 +457,7 @@
   font-size: 9px;
   font-weight: 600;
   color: var(--gold);
-  width: 24px;
+  width: 30px;
   text-align: right;
   flex-shrink: 0;
 }
@@ -496,7 +500,7 @@
 
 .who-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -656,7 +660,7 @@
   <div class="what-inner">
     <div class="what-header">
       <h2>What we<br><em>build and deliver.</em></h2>
-      <p>Nicomachea operates across four categories of work — assessment, implementation, platform licensing, and managed services. Each connects to the others. The assessment finds the problems. The implementation solves them. The platform scales the methodology. The managed services sustain the improvement.</p>
+      <p>Nicomachea operates across four categories of work — assessment, implementation, methodology licensing, and managed services. Each connects to the others. The assessment finds the problems. The implementation solves them. The platform scales the methodology. The managed services sustain the improvement.</p>
     </div>
     <div class="services-grid">
       <div class="service-item fade-in">
@@ -667,7 +671,7 @@
       <div class="service-item fade-in">
         <div class="service-num">02</div>
         <div class="service-title">Implementation</div>
-        <div class="service-desc">Scopes of work derived from assessment findings. Automation and bot development. Digital presence. Website build. Staff training. AI compliance advisory. Technology integration and selection.</div>
+        <div class="service-desc">Scopes of work derived from assessment findings. Recommended work is carried out by independent specialist providers, with Nicomachea recommending, coordinating or managing delivery, as agreed with each client.</div>
       </div>
       <div class="service-item fade-in">
         <div class="service-num">03</div>
@@ -676,16 +680,11 @@
       </div>
       <div class="service-item fade-in">
         <div class="service-num">04</div>
-        <div class="service-title">Acquisition Analysis</div>
-        <div class="service-desc">Pre-purchase business health assessment for buyers conducting due diligence. The NIBEX Complete framework applied to a target business — producing a structured picture of what is actually being acquired.</div>
+        <div class="service-title">Managed Services</div>
+        <div class="service-desc">Ongoing support through monthly retainers, covering NIBEX Monitor reassessments and operational advisory to track progress and catch new risks early.</div>
       </div>
       <div class="service-item fade-in">
         <div class="service-num">05</div>
-        <div class="service-title">Managed Services</div>
-        <div class="service-desc">Ongoing support through defined service level agreements. Monthly retainers covering digital presence management, technology maintenance, NIBEX Monitor reassessments, and operational advisory.</div>
-      </div>
-      <div class="service-item fade-in">
-        <div class="service-num">06</div>
         <div class="service-title">Alexandria</div>
         <div class="service-desc">Nicomachea's proprietary asset management platform — in development. Designed for integration with AI agent infrastructure, enabling businesses to manage physical and digital assets at scale.</div>
       </div>
@@ -700,44 +699,44 @@
     <h2>The Nicomachea Business Index.</h2>
     <div class="rule-gold"></div>
     <p>NIBEX is a first principles business health assessment framework — the first of its kind available as a standardised, licensable methodology at the SME and institutional level.</p>
-    <p>It produces a single, comparable score from 0 to 100 across eleven weighted dimensions, with sector-specific calibration and a dereliction protocol that surfaces active legal and compliance failures before they become crises.</p>
+    <p>It produces a single, comparable score out of 5 across eleven dimensions, with sector-specific calibration and a dereliction protocol that surfaces active legal and compliance failures before they become crises.</p>
     <p>The before score establishes the baseline. The after score, produced on reassessment, is the proof of value — a number that demonstrates measurable improvement across every dimension addressed.</p>
     <a href="nibex.html">Learn about NIBEX →</a>
   </div>
   <div class="nibex-visual fade-in">
     <div class="nibex-score-display">
-      <div class="nibex-score-num">53<span class="nibex-score-denom">/100</span></div>
+      <div class="nibex-score-num">2.7<span class="nibex-score-denom">/5.0</span></div>
       <div class="nibex-score-label">NIBEX Score — Illustrative</div>
     </div>
     <div class="dim-bar-row">
       <span class="dim-bar-label">Economic</span>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:56%"></div></div>
-      <span class="dim-bar-val">56</span>
+      <span class="dim-bar-val">2.8</span>
     </div>
     <div class="dim-bar-row">
       <span class="dim-bar-label">Operations</span>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:42%"></div></div>
-      <span class="dim-bar-val">42</span>
+      <span class="dim-bar-val">2.1</span>
     </div>
     <div class="dim-bar-row">
       <span class="dim-bar-label">Digital</span>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:28%"></div></div>
-      <span class="dim-bar-val">28</span>
+      <span class="dim-bar-val">1.4</span>
     </div>
     <div class="dim-bar-row">
       <span class="dim-bar-label">Customers</span>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:64%"></div></div>
-      <span class="dim-bar-val">64</span>
+      <span class="dim-bar-val">3.2</span>
     </div>
     <div class="dim-bar-row">
       <span class="dim-bar-label">Legal</span>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:20%"></div></div>
-      <span class="dim-bar-val">20⚠</span>
+      <span class="dim-bar-val">1.0⚠</span>
     </div>
     <div class="dim-bar-row">
       <span class="dim-bar-label">Strategy</span>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:58%"></div></div>
-      <span class="dim-bar-val">58</span>
+      <span class="dim-bar-val">2.9</span>
     </div>
     <div class="nibex-note">Illustrative partial assessment · 6 of 11 dimensions scored</div>
   </div>
@@ -761,11 +760,7 @@
       </div>
       <div class="who-item fade-in">
         <div class="who-item-title">Lenders and investors</div>
-        <div class="who-item-desc">Regional banks, private equity, and business investors who need a standardised framework for assessing the operational and strategic health of businesses in their portfolio or pipeline.</div>
-      </div>
-      <div class="who-item fade-in">
-        <div class="who-item-title">Acquisition buyers</div>
-        <div class="who-item-desc">Buyers conducting pre-purchase due diligence who need a structured, scored picture of what they are actually acquiring beyond what the seller's information memorandum presents.</div>
+        <div class="who-item-desc">Regional banks and business investors who need a standardised framework for understanding the operational and strategic health of the businesses they support.</div>
       </div>
     </div>
   </div>
@@ -777,6 +772,7 @@
     <div class="mvp-label">MVP Development Phase — Now Open</div>
     <div class="mvp-headline">Be among the first ten businesses assessed by NIBEX.</div>
     <div class="mvp-body">We are inviting a limited number of businesses to participate in the NIBEX MVP development phase at a significant discount. Participants receive a full assessment, a scored findings report, and first access to the platform at preferential rates when it launches.</div>
+    <div class="mvp-body" style="color:var(--gold-light);margin-top:-24px">NECC members: a limited number of free pilot assessments are available.</div>
     <a href="contact.html" class="btn-primary">Express interest</a>
   </div>
 </section>
@@ -809,7 +805,7 @@
   </div>
 </footer>
 <div class="footer-bottom">
-  <div class="footer-reg">Nicomachea Limited · Company No. 17155515 · Middlesbrough, Tees Valley</div>
+  <div class="footer-reg">Nicomachea Limited · Registered in England and Wales · Company No. 17155515 · Registered office: Aykley Heads Business Centre, Aykley Heads, Durham, DH1 5TS</div>
   <div class="footer-reg">© 2026 Nicomachea Limited. All rights reserved.</div>
 </div>
 
