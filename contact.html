@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Contact Nicomachea — discuss a NIBEX assessment, licensing, or any enquiry about our services.">
+<meta name="description" content="Contact Nicomachea — apply for a free NECC pilot assessment, discuss a NIBEX assessment, or ask about licensing.">
 <title>Contact — Nicomachea</title>
 <link rel="stylesheet" href="shared.css">
 <style>
 .contact-hero {
-  padding: 160px 60px 80px;
+  padding: 150px 60px 70px;
   background: var(--ink);
   position: relative;
   overflow: hidden;
@@ -22,17 +22,18 @@
 }
 
 .contact-hero-inner {
-  max-width: 680px;
+  max-width: 640px;
+  margin: 0 auto;
   position: relative;
 }
 
 .contact-hero h1 {
   font-family: var(--serif);
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(36px, 5vw, 52px);
   font-weight: 300;
   color: #fff;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .contact-hero h1 em {
@@ -43,152 +44,88 @@
 .contact-hero p {
   font-size: 16px;
   line-height: 1.8;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.5);
 }
 
-/* CONTACT BODY */
+/* PAGE BODY — single column */
 .contact-body {
-  padding: 80px 60px;
-  max-width: 1200px;
+  padding: 60px 24px 80px;
+  max-width: 640px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
 }
 
-/* PEOPLE */
-.people-section { }
-
-.person-card {
-  background: var(--surface);
-  border: 0.5px solid var(--rule);
+/* NECC PILOT OFFER */
+.pilot-box {
+  background: var(--ink);
   padding: 32px;
-  margin-bottom: 16px;
   position: relative;
-  transition: border-color 0.2s;
+  margin-bottom: 48px;
 }
 
-.person-card:hover { border-color: var(--gold); }
-
-.person-card::before {
+.pilot-box::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; bottom: 0;
+  left: 0; top: 0; bottom: 0;
   width: 3px;
   background: linear-gradient(180deg, var(--gold), var(--gold-light));
-  opacity: 0;
-  transition: opacity 0.2s;
 }
 
-.person-card:hover::before { opacity: 1; }
-
-.person-name {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-
-.person-title {
+.pilot-label {
   font-family: var(--sans);
   font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.pilot-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.pilot-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
   margin-bottom: 20px;
 }
 
-.person-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.person-detail {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.person-detail a {
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.person-detail a:hover { color: var(--gold); }
-
-.detail-label {
+.pilot-btn {
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--faint);
-  width: 48px;
-  flex-shrink: 0;
-}
-
-/* ENQUIRY TYPES */
-.enquiry-section {
-  margin-top: 40px;
-}
-
-.enquiry-section h3 {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 300;
   color: var(--ink);
-  margin-bottom: 24px;
+  background: var(--gold);
+  border: none;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.enquiry-item {
-  padding: 20px 0;
-  border-bottom: 0.5px solid var(--rule);
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 20px;
-}
+.pilot-btn:hover { background: var(--gold-light); }
 
-.enquiry-item:last-child { border-bottom: none; }
-
-.enquiry-type {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--ink);
-}
-
-.enquiry-contact {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  white-space: nowrap;
-}
-
-/* FORM SIDE */
+/* FORM */
 .form-section h2 {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 300;
   color: var(--ink);
   margin-bottom: 8px;
 }
 
-.form-section p {
+.form-section > p {
   font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .form-group {
@@ -197,13 +134,20 @@
 
 .form-label {
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
   display: block;
   margin-bottom: 8px;
+}
+
+.form-optional {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--faint);
 }
 
 .form-input,
@@ -211,11 +155,11 @@
 .form-textarea {
   width: 100%;
   font-family: var(--body);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--ink);
   background: var(--surface);
   border: 0.5px solid var(--rule);
-  padding: 12px 16px;
+  padding: 13px 16px;
   outline: none;
   transition: border-color 0.2s;
   -webkit-appearance: none;
@@ -237,21 +181,21 @@
 }
 
 .form-textarea {
-  min-height: 140px;
+  min-height: 120px;
   resize: vertical;
   line-height: 1.65;
 }
 
 .form-submit {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink);
   background: var(--gold);
   border: none;
-  padding: 16px 40px;
+  padding: 17px 40px;
   cursor: pointer;
   transition: background 0.2s;
   width: 100%;
@@ -268,64 +212,47 @@
   line-height: 1.6;
 }
 
-/* LOCATION */
-.location-band {
-  background: var(--gold-pale);
+.form-note a { color: var(--muted); }
+
+.direct-contact {
+  margin-top: 40px;
+  padding-top: 28px;
   border-top: 0.5px solid var(--rule);
-  padding: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  max-width: 100%;
-}
-
-.location-item { }
-
-.location-label {
-  font-family: var(--sans);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-
-.location-value {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.4;
-}
-
-.location-sub {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
-  margin-top: 4px;
-  line-height: 1.6;
+  line-height: 1.8;
+  text-align: center;
 }
+
+.direct-contact a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--gold);
+}
+
+.direct-contact a:hover { color: var(--gold); }
 
 /* SUCCESS */
 .form-success {
   display: none;
   background: var(--gold-pale);
   border: 0.5px solid var(--gold);
-  padding: 24px;
+  padding: 28px 24px;
   text-align: center;
 }
 
 .form-success p {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 19px;
   color: var(--ink);
   margin: 0;
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
-  .contact-hero { padding: 120px 24px 60px; }
-  .contact-body { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
-  .location-band { grid-template-columns: 1fr; padding: 40px 24px; }
+  .contact-hero { padding: 120px 24px 50px; }
+  .contact-body { padding: 40px 20px 60px; }
+  .pilot-box { padding: 26px 22px; }
 }
 </style>
 </head>
@@ -346,123 +273,62 @@
 <!-- HERO -->
 <section class="contact-hero">
   <div class="contact-hero-inner">
-    <div class="section-label" style="margin-bottom:24px">
+    <div class="section-label" style="margin-bottom:22px">
       <span style="width:24px;height:1px;background:var(--gold);display:inline-block;vertical-align:middle;margin-right:14px;"></span>
       Get in touch
     </div>
     <h1>Start a <em>conversation.</em></h1>
-    <p>Whether you're interested in a NIBEX assessment for your business, exploring licensing for your practice or institution, or simply want to understand more about what we're building — we'd like to hear from you.</p>
+    <p>Fill in the short form below and we'll reply within one working day.</p>
   </div>
 </section>
 
-<!-- CONTACT BODY -->
+<!-- BODY -->
 <div class="contact-body">
 
-  <!-- LEFT — PEOPLE AND ENQUIRY TYPES -->
-  <div>
-    <div class="section-label" style="margin-bottom:24px">Who to contact</div>
-
-    <div class="person-card fade-in">
-      <div class="person-name">David Brown</div>
-      <div class="person-title">Founder &amp; Principal</div>
-      <div class="person-details">
-        <div class="person-detail">
-          <span class="detail-label">Email</span>
-          <a href="mailto:david@nicomachea.co.uk">david@nicomachea.co.uk</a>
-        </div>
-        <div class="person-detail">
-          <span class="detail-label">Phone</span>
-          <a href="tel:07917206751">07917 206 751</a>
-        </div>
-        <div class="person-detail">
-          <span class="detail-label">For</span>
-          <span>NIBEX methodology · Licensing · Acquisition analysis · Technology development</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="person-card fade-in">
-      <div class="person-name">Sarah Brown</div>
-      <div class="footer-contact-item">Operations &amp; Business Development Manager</div>
-      <div class="person-details">
-        <div class="person-detail">
-          <span class="detail-label">Email</span>
-          <a href="mailto:sarah@nicomachea.co.uk">sarah@nicomachea.co.uk</a>
-        </div>
-        <div class="person-detail">
-          <span class="detail-label">For</span>
-          <span>New client enquiries · MVP participation · General business enquiries · Events</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="enquiry-section fade-in">
-      <h3>What are you looking for?</h3>
-      <div class="enquiry-item">
-        <span class="enquiry-type">NIBEX assessment for my business</span>
-        <span class="enquiry-contact">Sarah</span>
-      </div>
-      <div class="enquiry-item">
-        <span class="enquiry-type">MVP participant interest</span>
-        <span class="enquiry-contact">Sarah</span>
-      </div>
-      <div class="enquiry-item">
-        <span class="enquiry-type">Licensing for my practice</span>
-        <span class="enquiry-contact">David</span>
-      </div>
-      <div class="enquiry-item">
-        <span class="enquiry-type">Pre-acquisition due diligence</span>
-        <span class="enquiry-contact">David</span>
-      </div>
-      <div class="enquiry-item">
-        <span class="enquiry-type">Implementation or managed services</span>
-        <span class="enquiry-contact">Sarah</span>
-      </div>
-      <div class="enquiry-item">
-        <span class="enquiry-type">Partnership or institutional enquiry</span>
-        <span class="enquiry-contact">David</span>
-      </div>
-    </div>
+  <!-- NECC PILOT OFFER -->
+  <div class="pilot-box fade-in">
+    <div class="pilot-label">NECC members</div>
+    <div class="pilot-title">Free NIBEX business health check</div>
+    <div class="pilot-text">A limited number of free pilot assessments are available to North East Chamber of Commerce members, matched to the depth your business actually needs. Apply below and we'll be in touch to arrange it.</div>
+    <button type="button" class="pilot-btn" onclick="choosePilot()">Apply for a free assessment</button>
   </div>
 
-  <!-- RIGHT — FORM -->
-  <div class="form-section fade-in">
-    <div class="section-label" style="margin-bottom:16px">Send a message</div>
+  <!-- FORM -->
+  <div class="form-section fade-in" id="form-start">
+    <div class="section-label" style="margin-bottom:14px">Send a message</div>
     <h2>Tell us what you need.</h2>
-    <p>Fill in the form and we'll respond within one working day. If your enquiry is time-sensitive, call David directly on 07917 206 751.</p>
+    <p>Only your name, email and reason for contacting us are required.</p>
 
     <form id="contact-form" onsubmit="handleSubmit(event)">
       <div class="form-group">
         <label class="form-label" for="name">Your name</label>
-        <input type="text" id="name" class="form-input" required placeholder="Full name">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="business">Business name</label>
-        <input type="text" id="business" class="form-input" placeholder="Your organisation">
+        <input type="text" id="name" class="form-input" required autocomplete="name" placeholder="Full name">
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email address</label>
-        <input type="email" id="email" class="form-input" required placeholder="your@email.com">
+        <input type="email" id="email" class="form-input" required autocomplete="email" placeholder="your@email.com">
       </div>
       <div class="form-group">
-        <label class="form-label" for="enquiry">Nature of enquiry</label>
+        <label class="form-label" for="business">Business name <span class="form-optional">(optional)</span></label>
+        <input type="text" id="business" class="form-input" autocomplete="organization" placeholder="Your business">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="enquiry">I'm interested in</label>
         <select id="enquiry" class="form-select" required>
           <option value="">— please select —</option>
+          <option>Free NECC pilot assessment</option>
           <option>NIBEX assessment for my business</option>
-          <option>MVP participant interest</option>
           <option>Licensing for my practice or institution</option>
-          <option>Pre-acquisition due diligence</option>
-          <option>Implementation or managed services</option>
-          <option>Partnership or institutional enquiry</option>
-          <option>Other</option>
+          <option>Help acting on assessment findings</option>
+          <option>Something else</option>
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label" for="message">Message</label>
-        <textarea id="message" class="form-textarea" required placeholder="Tell us a little about your business and what you're looking for..."></textarea>
+        <label class="form-label" for="message">Message <span class="form-optional">(optional)</span></label>
+        <textarea id="message" class="form-textarea" placeholder="Anything you'd like us to know about your business"></textarea>
       </div>
-      <button type="submit" class="form-submit">Send message</button>
-      <div class="form-note">We respond to all enquiries within one working day. Your details are held in accordance with our Privacy Policy and are never shared with third parties.</div>
+      <button type="submit" class="form-submit">Send</button>
+      <div class="form-note">We reply within one working day. Your details are handled in line with our <a href="Nicomachea_Privacy_Policy.html">Privacy Policy</a>.</div>
       <div id="form-error" style="display:none;margin-top:12px;font-size:13px;color:#b91c1c;background:#fef2f2;padding:12px;border:0.5px solid #fca5a5;border-radius:2px"></div>
     </form>
 
@@ -470,25 +336,13 @@
       <p>Thank you. We'll be in touch within one working day.</p>
     </div>
   </div>
-</div>
 
-<!-- LOCATION BAND -->
-<div class="location-band">
-  <div class="location-item">
-    <div class="location-label">Based in</div>
-    <div class="location-value">Middlesbrough</div>
-    <div class="location-sub">Tees Valley, North East England</div>
+  <!-- DIRECT CONTACT -->
+  <div class="direct-contact">
+    Prefer to talk? Call David on <a href="tel:07917206751">07917 206 751</a><br>
+    or email <a href="mailto:david@nicomachea.co.uk">david@nicomachea.co.uk</a>
   </div>
-  <div class="location-item">
-    <div class="location-label">Registered</div>
-    <div class="location-value">Nicomachea Limited</div>
-    <div class="location-sub">Company No. 17155515<br>Registered in England and Wales</div>
-  </div>
-  <div class="location-item">
-    <div class="location-label">Working with</div>
-    <div class="location-value">UK-wide</div>
-    <div class="location-sub">Tees Valley · North East · National<br>Licensing enquiries welcome internationally</div>
-  </div>
+
 </div>
 
 <!-- FOOTER -->
@@ -514,16 +368,28 @@
     <div class="footer-contact-item"><a href="mailto:david@nicomachea.co.uk">david@nicomachea.co.uk</a></div>
     <div class="footer-contact-item"><a href="tel:07917206751">07917 206 751</a></div>
     <div class="footer-contact-item" style="margin-top:12px"><strong style="color:rgba(255,255,255,0.7);font-size:13px">Sarah Brown</strong></div>
-    <div class="footer-contact-item">Operations &amp; Business Development Director</div>
+    <div class="footer-contact-item">Operations &amp; Business Development Manager</div>
     <div class="footer-contact-item"><a href="mailto:sarah@nicomachea.co.uk">sarah@nicomachea.co.uk</a></div>
   </div>
 </footer>
 <div class="footer-bottom">
-  <div class="footer-reg">Nicomachea Limited · Company No. 17155515 · Middlesbrough, Tees Valley</div>
+  <div class="footer-reg">Nicomachea Limited · Registered in England and Wales · Company No. 17155515 · Registered office: Aykley Heads Business Centre, Aykley Heads, Durham, DH1 5TS</div>
   <div class="footer-reg">© 2026 Nicomachea Limited. All rights reserved.</div>
 </div>
 
 <script>
+// Pre-select the NECC pilot and move to the form
+function choosePilot() {
+  document.getElementById('enquiry').value = 'Free NECC pilot assessment';
+  document.getElementById('form-start').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(function () { document.getElementById('name').focus({ preventScroll: true }); }, 500);
+}
+
+// If the link includes ?necc (e.g. contact.html?necc), pre-select the pilot automatically
+if (/[?&]necc\b/i.test(window.location.search)) {
+  document.getElementById('enquiry').value = 'Free NECC pilot assessment';
+}
+
 async function handleSubmit(e) {
   e.preventDefault();
 
@@ -537,7 +403,7 @@ async function handleSubmit(e) {
     email:    document.getElementById('email').value.trim(),
     business: document.getElementById('business').value.trim(),
     enquiry:  document.getElementById('enquiry').value,
-    message:  document.getElementById('message').value.trim(),
+    message:  document.getElementById('message').value.trim() || '(No message)',
   };
 
   btn.textContent = 'Sending…';
@@ -562,7 +428,7 @@ async function handleSubmit(e) {
     }
   } catch (err) {
     console.error('Form submission failed:', err);
-    btn.textContent = 'Send message';
+    btn.textContent = 'Send';
     btn.disabled = false;
     if (errEl) {
       errEl.textContent = 'Something went wrong — please email david@nicomachea.co.uk directly or try again.';
