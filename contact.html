@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Contact Nicomachea — apply for a free NECC pilot assessment, discuss a NIBEX assessment, or ask about licensing.">
+<meta name="description" content="Contact Nicomachea — apply for a free NIBEX pilot assessment, discuss a NIBEX assessment, or ask about licensing.">
 <title>Contact — Nicomachea</title>
 <link rel="stylesheet" href="shared.css">
 <style>
@@ -287,9 +287,9 @@
 
   <!-- NECC PILOT OFFER -->
   <div class="pilot-box fade-in">
-    <div class="pilot-label">NECC members · New Year offer</div>
+    <div class="pilot-label">New Year offer · Limited places</div>
     <div class="pilot-title">Start 2027 knowing where your business really stands</div>
-    <div class="pilot-text">A limited number of free pilot assessments are available to small and medium-sized North East Chamber of Commerce members, covering the Foundations or Standard assessment. Larger or more complex businesses are welcome at our MVP rate. MVP places are limited to our first ten clients or until 31 January 2027, whichever comes first. Apply below and we'll be in touch to arrange it.</div>
+    <div class="pilot-text">A limited number of free NIBEX assessments are open to any business, first come, first served. Free places cover the Foundations or Standard assessment. Every business, including larger and more complex ones, can also have an assessment at our discounted MVP rate: Complete assessments start from £2,100 and are priced on the complexity of the business. The offer ends when we reach ten clients or on 31 January 2027, whichever comes first. Apply below and we'll be in touch to arrange it.</div>
     <button type="button" class="pilot-btn" onclick="choosePilot()">Apply for a free assessment</button>
   </div>
 
@@ -316,7 +316,7 @@
         <label class="form-label" for="enquiry">I'm interested in</label>
         <select id="enquiry" class="form-select" required>
           <option value="">— please select —</option>
-          <option>Free NECC pilot assessment</option>
+          <option>Free pilot assessment</option>
           <option>NIBEX assessment for my business</option>
           <option>Licensing for my practice or institution</option>
           <option>Help acting on assessment findings</option>
@@ -380,14 +380,15 @@
 <script>
 // Pre-select the NECC pilot and move to the form
 function choosePilot() {
-  document.getElementById('enquiry').value = 'Free NECC pilot assessment';
+  document.getElementById('enquiry').value = 'Free pilot assessment';
   document.getElementById('form-start').scrollIntoView({ behavior: 'smooth', block: 'start' });
   setTimeout(function () { document.getElementById('name').focus({ preventScroll: true }); }, 500);
 }
 
-// If the link includes ?necc (e.g. contact.html?necc), pre-select the pilot automatically
-if (/[?&]necc\b/i.test(window.location.search)) {
-  document.getElementById('enquiry').value = 'Free NECC pilot assessment';
+// If the link includes ?free or ?necc (e.g. contact.html?free), pre-select the pilot automatically.
+// ?necc is kept so links already shared on LinkedIn keep working.
+if (/[?&](free|necc)\b/i.test(window.location.search)) {
+  document.getElementById('enquiry').value = 'Free pilot assessment';
 }
 
 async function handleSubmit(e) {
